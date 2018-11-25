@@ -58,8 +58,10 @@ function buyZombie() {
 function displayZombieCase() {
   const priceEl = document.querySelector('#zombie #price');
   const brainPerSec = document.getElementById('brainPerSec');
-  priceEl.innerHTML = `${zombie.price}`;
+  const zombieCount = document.getElementById('count');
+  priceEl.innerHTML = `${zombie.price} brains`;
   brainPerSec.innerHTML = `${zombie.brainPerSec} Brains per second`;
+  zombieCount.innerHTML = `${zombie.nbZombie}`;
 }
 
 interface zombie {
@@ -69,16 +71,3 @@ interface zombie {
 }
 
 start();
-
-/**
- * 
- * Il va falloir enregistrer le nombre de zombie
- * Ainsi que leur prix croissant
- * Ceci doit aussi modifier la variable qui augmente le nb de brain par seconde
- * 
- * Il faudrait enregistrer tout ça dans un objet avec :
- * nbZombie: number
- * brainPerSec: number
- * price: number
- * 
- */
