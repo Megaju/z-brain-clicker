@@ -16,6 +16,9 @@ Chaque zombie apporte +1 brain à la seconde.
 
 > Bref petit projet du WE, on verra bien ce que ça donnera.
 
+## Dev command line
+> SASS: sass --watch sass:dist/css
+
 ## Copyright/Attribution Notice:
 
 Zombies :

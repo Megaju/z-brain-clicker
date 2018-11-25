@@ -1,0 +1,24 @@
+{
+  "name": "z-brain-clicker",
+  "version": "1.0.0",
+  "description": "A Zombie Game Clicker with some brains",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Megaju/z-brain-clicker.git"
+  },
+  "keywords": [
+    "BRAIN",
+    "ZOMBIE",
+    "CLICKER-GAME"
+  ],
+  "author": "Julien Malle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Megaju/z-brain-clicker/issues"
+  },
+  "homepage": "https://github.com/Megaju/z-brain-clicker#readme"
+}

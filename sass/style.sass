@@ -1,0 +1,58 @@
+@import "var"
+  
+body
+  display: flex
+  justify-content: space-around
+  flex-wrap: wrap
+  margin: 0
+  background-color: $dark
+  color: $light
+  font-family: sans-serif
+  h2
+    margin: 0
+    text-align: center
+
+  header
+    width: 100vw
+    min-width: 100vw
+    height: 10vh
+    line-height: 10vh
+    text-align: center
+    h1
+      color: $red
+      margin: 0
+  
+  aside
+    min-width: calc(25vw - 60px)
+    max-width: calc(25vw - 60px)
+    height: calc(80vh - 60px)
+    background-color: #111
+    border-radius: 20px
+    padding: 30px
+    box-shadow: 0 0 10px #111
+
+    &.brain
+      #big-big-brain
+        width: 220px
+        height: 159px
+        margin: 200px auto
+        background-image: url(../images/big-big-brain.png)
+        cursor: pointer
+        transition: .4s
+        &:hover
+          transform: scale(1.1)
+
+  section
+    min-width: calc(45vw - 60px)
+    max-width: calc(45vw - 60px)
+    height: calc(80vh - 60px)
+    background-color: #111
+    border-radius: 20px
+    padding: 30px
+    box-shadow: 0 0 10px #111
+
+  footer
+    width: 100vw
+    min-width: 100vw
+    height: 10vh
+    text-align: center
