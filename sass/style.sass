@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px')
 @import "var"
+@import "ext"
+@import "elements/zmarket"
+@import "elements/brain"
   
 body
   display: flex
@@ -6,26 +10,19 @@ body
   flex-wrap: wrap
   margin: 0
   background-color: $dark
-  color: $light
-  font-family: sans-serif
   background-image: url(../images/bg.png)
   background-size: cover
-  -webkit-touch-callout: none
-  -webkit-user-select: none
-  -khtml-user-select: none
-  -moz-user-select: none
-  -ms-user-select: none
-  user-select: none
+  color: $light
+  font-family: 'Slabo 27px', serif
+  @extend %no-select
+
   h2
     margin: 0
     text-align: center
 
   header
-    width: 100vw
-    min-width: 100vw
-    height: 10vh
+    @extend %base-header-footer
     line-height: 10vh
-    text-align: center
     h1
       color: $red
       margin: 0
@@ -33,89 +30,12 @@ body
   aside
     min-width: calc(25vw - 60px)
     max-width: calc(25vw - 60px)
-    height: calc(80vh - 60px)
-    background-color: $dark-opac
-    border-radius: 20px
-    padding: 30px
-    box-shadow: 0 0 10px #111
-
-    &.brain
-      h2 span
-        display: block
-        background-color: $light
-        border-radius: 20px
-        color: $red
-        text-align: center
-        margin: 10px 0
-        box-shadow: 0 0 25px $red
-      #big-big-brain
-        width: 220px
-        height: 159px
-        margin: 200px auto
-        background-image: url(../images/big-big-brain.png)
-        cursor: pointer
-        transition: .1s
-    
-    &.z-market
-      ul
-        margin: 0
-        padding: 30px 0
-        li
-          position: relative
-          height: 76px
-          list-style-type: none
-          background-color: #333
-          background-image: url(../images/zombie-market.png), url(../images/button-bg.png)
-          background-repeat: no-repeat, no-repeat
-          background-size: auto, cover
-          background-position: -10px 5px, 0 0
-          cursor: pointer
-          transition: .2s
-          &:hover
-            filter: saturate(3)
-          .name
-            margin: 0
-            padding: 2px 0
-            float: left
-            width: calc(100% - 76px)
-            text-align: center
-            font-weight: 500
-            text-transform: uppercase
-          .price
-            position: absolute
-            bottom: 0
-            left: 0
-            width: 100%
-            padding: 1px 5px
-            background: -moz-linear-gradient(left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.63) 3%, rgba(0,0,0,0) 100%)
-            background: -webkit-linear-gradient(left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.63) 3%,rgba(0,0,0,0) 100%)
-            background: linear-gradient(to right, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.63) 3%,rgba(0,0,0,0) 100%)
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 )
-          .count
-            position: absolute
-            top: 0
-            right: 0
-            width: 76px
-            height: 76px
-            line-height: 76px
-            color: $light
-            text-align: center
-            font-size: 200%
-            background-image: url(../images/box.png)
-            background-size: contain
-            z-index: 1
+    @extend %basic-bloc
 
   section
     min-width: calc(45vw - 60px)
     max-width: calc(45vw - 60px)
-    height: calc(80vh - 60px)
-    background-color: $dark-opac
-    border-radius: 20px
-    padding: 30px
-    box-shadow: 0 0 10px #111
+    @extend %basic-bloc
 
   footer
-    width: 100vw
-    min-width: 100vw
-    height: 10vh
-    text-align: center
+    @extend %base-header-footer

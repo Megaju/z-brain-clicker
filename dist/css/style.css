@@ -1,13 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Slabo+27px");
 body {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin: 0;
-  background-color: #222;
-  color: #eee;
-  font-family: sans-serif;
-  background-image: url(../images/bg.png);
-  background-size: cover;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -15,52 +7,27 @@ body {
   -ms-user-select: none;
   user-select: none;
 }
-body h2 {
-  margin: 0;
-  text-align: center;
-}
-body header {
-  width: 100vw;
-  min-width: 100vw;
-  height: 10vh;
-  line-height: 10vh;
-  text-align: center;
-}
-body header h1 {
-  color: #c22;
-  margin: 0;
-}
-body aside {
-  min-width: calc(25vw - 60px);
-  max-width: calc(25vw - 60px);
+
+body section, body aside {
   height: calc(80vh - 60px);
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   padding: 30px;
   box-shadow: 0 0 10px #111;
 }
-body aside.brain h2 span {
-  display: block;
-  background-color: #eee;
-  border-radius: 20px;
-  color: #c22;
+
+body footer, body header {
+  width: 100vw;
+  min-width: 100vw;
+  height: 10vh;
   text-align: center;
-  margin: 10px 0;
-  box-shadow: 0 0 25px #c22;
 }
-body aside.brain #big-big-brain {
-  width: 220px;
-  height: 159px;
-  margin: 200px auto;
-  background-image: url(../images/big-big-brain.png);
-  cursor: pointer;
-  transition: 0.1s;
-}
-body aside.z-market ul {
+
+ul.z-market {
   margin: 0;
   padding: 30px 0;
 }
-body aside.z-market ul li {
+ul.z-market li {
   position: relative;
   height: 76px;
   list-style-type: none;
@@ -72,19 +39,20 @@ body aside.z-market ul li {
   cursor: pointer;
   transition: 0.2s;
 }
-body aside.z-market ul li:hover {
+ul.z-market li:hover {
   filter: saturate(3);
 }
-body aside.z-market ul li .name {
+ul.z-market li .name {
   margin: 0;
   padding: 2px 0;
   float: left;
   width: calc(100% - 76px);
   text-align: center;
-  font-weight: 500;
+  font-weight: 800;
   text-transform: uppercase;
+  text-shadow: 0 0 6px #222;
 }
-body aside.z-market ul li .price {
+ul.z-market li .price {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -95,7 +63,7 @@ body aside.z-market ul li .price {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.63) 3%, rgba(0, 0, 0, 0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=1 );
 }
-body aside.z-market ul li .count {
+ul.z-market li .count {
   position: absolute;
   top: 0;
   right: 0;
@@ -109,20 +77,54 @@ body aside.z-market ul li .count {
   background-size: contain;
   z-index: 1;
 }
+
+.brain h2 span {
+  display: block;
+  background-color: #eee;
+  border-radius: 20px;
+  color: #c22;
+  text-align: center;
+  margin: 10px 0;
+  box-shadow: 0 0 25px #c22;
+}
+.brain #big-big-brain {
+  width: 220px;
+  height: 159px;
+  margin: 200px auto;
+  background-image: url(../images/big-big-brain.png);
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+body {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0;
+  background-color: #222;
+  background-image: url(../images/bg.png);
+  background-size: cover;
+  color: #eee;
+  font-family: "Slabo 27px", serif;
+}
+body h2 {
+  margin: 0;
+  text-align: center;
+}
+body header {
+  line-height: 10vh;
+}
+body header h1 {
+  color: #c22;
+  margin: 0;
+}
+body aside {
+  min-width: calc(25vw - 60px);
+  max-width: calc(25vw - 60px);
+}
 body section {
   min-width: calc(45vw - 60px);
   max-width: calc(45vw - 60px);
-  height: calc(80vh - 60px);
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 0 10px #111;
-}
-body footer {
-  width: 100vw;
-  min-width: 100vw;
-  height: 10vh;
-  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

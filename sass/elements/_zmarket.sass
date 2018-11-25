@@ -1,0 +1,48 @@
+ul.z-market
+  margin: 0
+  padding: 30px 0
+  li
+    position: relative
+    height: 76px
+    list-style-type: none
+    background-color: #333
+    background-image: url(../images/zombie-market.png), url(../images/button-bg.png)
+    background-repeat: no-repeat, no-repeat
+    background-size: auto, cover
+    background-position: -10px 5px, 0 0
+    cursor: pointer
+    transition: .2s
+    &:hover
+      filter: saturate(3)
+    .name
+      margin: 0
+      padding: 2px 0
+      float: left
+      width: calc(100% - 76px)
+      text-align: center
+      font-weight: 800
+      text-transform: uppercase
+      text-shadow: 0 0 6px $dark
+    .price
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      padding: 1px 5px
+      background: -moz-linear-gradient(left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.63) 3%, rgba(0,0,0,0) 100%)
+      background: -webkit-linear-gradient(left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.63) 3%,rgba(0,0,0,0) 100%)
+      background: linear-gradient(to right, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.63) 3%,rgba(0,0,0,0) 100%)
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 )
+    .count
+      position: absolute
+      top: 0
+      right: 0
+      width: 76px
+      height: 76px
+      line-height: 76px
+      color: $light
+      text-align: center
+      font-size: 200%
+      background-image: url(../images/box.png)
+      background-size: contain
+      z-index: 1
