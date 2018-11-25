@@ -31,16 +31,22 @@ body aside {
   padding: 30px;
   box-shadow: 0 0 10px #111;
 }
+body aside.brain h2 span {
+  display: block;
+  background-color: #eee;
+  border-radius: 20px;
+  color: #c22;
+  text-align: center;
+  margin: 10px 0;
+  box-shadow: 0 0 25px #c22;
+}
 body aside.brain #big-big-brain {
   width: 220px;
   height: 159px;
   margin: 200px auto;
   background-image: url(../images/big-big-brain.png);
   cursor: pointer;
-  transition: 0.4s;
-}
-body aside.brain #big-big-brain:hover {
-  transform: scale(1.1);
+  transition: 0.1s;
 }
 body section {
   min-width: calc(45vw - 60px);
