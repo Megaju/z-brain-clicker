@@ -48,6 +48,9 @@ body aside.brain #big-big-brain {
   cursor: pointer;
   transition: 0.1s;
 }
+body aside.z-market ul li {
+  outline: 1px solid #c22;
+}
 body section {
   min-width: calc(45vw - 60px);
   max-width: calc(45vw - 60px);
