@@ -18,6 +18,7 @@ Chaque zombie apporte +1 brain à la seconde.
 
 ## Dev command line
 > SASS: sass --watch sass:dist/css
+> TYPESCRIPT: tsc
 
 ## Copyright/Attribution Notice:
 
