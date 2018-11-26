@@ -20,5 +20,7 @@
   "bugs": {
     "url": "https://github.com/Megaju/z-brain-clicker/issues"
   },
-  "homepage": "https://github.com/Megaju/z-brain-clicker#readme"
+  "homepage": "https://github.com/Megaju/z-brain-clicker#readme",
+  "dependencies": {
+  }
 }

@@ -4,14 +4,13 @@ var game_1 = require("./game");
 var hud = {
     brains: getEl('nbBrain'),
     brainsPerSec: getEl('brainPerSec'),
-    nbZombies: getEl('zombieCount'),
-    bigBigBrain: getEl('big-big-brain'),
-    zombieCase: getEl('zombie'),
-    zombiePrice: getEl('price')
+    nbZombies: getEl('zombieCount')
 };
-var GAME = new game_1.Game(hud);
+console.log('Test');
+console.log('Test');
+var GAME = new game_1.Game();
 GAME.initGame();
-GAME.addEventsListener(hud);
 function getEl(id) {
     return document.getElementById(id);
 }
+//# sourceMappingURL=index.js.map

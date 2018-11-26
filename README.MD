@@ -18,7 +18,7 @@ Chaque zombie apporte +1 brain à la seconde.
 
 ## Dev command line
 > SASS: sass --watch sass:dist/css
-> TYPESCRIPT: tsc
+> TYPESCRIPT: tsc && watchify dist/js/index.js -o dist/js/bundle.js
 
 ## Copyright/Attribution Notice:
 
