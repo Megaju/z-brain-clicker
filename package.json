@@ -4,7 +4,8 @@
   "description": "A Zombie Game Clicker with some brains",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"tsc\" \"watchify dist/js/index.js -o dist/js/bundle.js\" \"sass --watch sass:dist/css\""
   },
   "repository": {
     "type": "git",

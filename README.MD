@@ -16,9 +16,8 @@ Chaque zombie apporte +1 brain à la seconde.
 
 > Bref petit projet du WE, on verra bien ce que ça donnera.
 
-## Dev command line
-> SASS: sass --watch sass:dist/css
-> TYPESCRIPT: tsc && watchify dist/js/index.js -o dist/js/bundle.js
+## Launch dev env
+> npm eatbrain
 
 ## Copyright/Attribution Notice:
 
