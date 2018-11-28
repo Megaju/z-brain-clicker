@@ -28,6 +28,11 @@ var Game = /** @class */ (function () {
             level: 1,
             progression: 0
         };
+        this.hud.brains.innerHTML = "" + this.brains.toFixed(2);
+        this.hud.brainsPerSec.innerHTML = this.updateBrainsPerSec().toFixed(2) + " Per Sec";
+        this.hud.nbZombies.innerHTML = "" + this.zombies.quantity;
+        this.hud.zombiePrice.innerHTML = "" + this.zombies.price;
+        this.hud.virusLevel.innerHTML = "" + this.virus.level;
         var timeline = setInterval(function () {
             var brainsPerSec = _this.updateBrainsPerSec();
             _this.brains += brainsPerSec;

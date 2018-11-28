@@ -39,6 +39,12 @@ export class Game {
       progression: 0
     }
 
+    this.hud.brains.innerHTML = `${this.brains.toFixed(2)}`;
+    this.hud.brainsPerSec.innerHTML = `${this.updateBrainsPerSec().toFixed(2)} Per Sec`;
+    this.hud.nbZombies.innerHTML = `${this.zombies.quantity}`;
+    this.hud.zombiePrice.innerHTML = `${this.zombies.price}`;
+    this.hud.virusLevel.innerHTML = `${this.virus.level}`;
+
     const timeline = setInterval(() => {
       const brainsPerSec = this.updateBrainsPerSec();
       this.brains += brainsPerSec;
