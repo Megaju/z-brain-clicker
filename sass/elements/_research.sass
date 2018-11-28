@@ -9,6 +9,7 @@ ul.research-market
     background-image: url(../images/button-bg.png)
     background-repeat: no-repeat
     background-size: cover
+    cursor: pointer
     .name
       width: calc(100% - 54px)
       text-align: center
@@ -34,7 +35,12 @@ ul.research-market
       right: 0
       width: 54px
       height: 54px
-      background-image: url(../images/virus-green.png)
       background-size: 90%
       background-repeat: no-repeat
       background-position: center bottom
+      &.green
+        background-image: url(../images/virus-green.png)
+      &.orange
+        background-image: url(../images/virus-orange.png)
+      &.red
+        background-image: url(../images/virus-red.png)

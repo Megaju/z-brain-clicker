@@ -7,7 +7,11 @@ var hud = {
     nbZombies: getEl('zombieCount'),
     bigBigBrain: getEl('big-big-brain'),
     zombieCase: getEl('zombie'),
-    zombiePrice: getEl('price')
+    zombiePrice: getEl('price'),
+    virusResearch: getEl('research-zvirus-boost'),
+    virusGauge: getEl('virus-gauge'),
+    virusIcon: getEl('virus-icon'),
+    virusLevel: getEl('virus-level')
 };
 var GAME = new game_1.Game(hud);
 GAME.initGame();

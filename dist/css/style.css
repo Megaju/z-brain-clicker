@@ -111,6 +111,7 @@ ul.research-market li {
   background-image: url(../images/button-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: pointer;
 }
 ul.research-market li .name {
   width: calc(100% - 54px);
@@ -138,10 +139,18 @@ ul.research-market li .icon {
   right: 0;
   width: 54px;
   height: 54px;
-  background-image: url(../images/virus-green.png);
   background-size: 90%;
   background-repeat: no-repeat;
   background-position: center bottom;
+}
+ul.research-market li .icon.green {
+  background-image: url(../images/virus-green.png);
+}
+ul.research-market li .icon.orange {
+  background-image: url(../images/virus-orange.png);
+}
+ul.research-market li .icon.red {
+  background-image: url(../images/virus-red.png);
 }
 
 body {

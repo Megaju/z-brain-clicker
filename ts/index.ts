@@ -7,7 +7,11 @@ const hud: hud = {
   nbZombies: getEl('zombieCount'),
   bigBigBrain: getEl('big-big-brain'),
   zombieCase: getEl('zombie'),
-  zombiePrice: getEl('price')
+  zombiePrice: getEl('price'),
+  virusResearch: getEl('research-zvirus-boost'),
+  virusGauge: getEl('virus-gauge'),
+  virusIcon: getEl('virus-icon'),
+  virusLevel: getEl('virus-level')
 }
 
 const GAME = new Game(hud);

@@ -30,4 +30,8 @@ export interface hud {
   bigBigBrain: HTMLElement;
   zombieCase: HTMLElement;
   zombiePrice: HTMLElement;
+  virusResearch: HTMLElement;
+  virusGauge: HTMLElement;
+  virusIcon: HTMLElement;
+  virusLevel: HTMLElement;
 }

@@ -1,8 +1,10 @@
 import { player, zombies, virus, study, training, hud } from "./models";
 
 export class Game {
+
   player: player;
   brains: number;
+  brainsPerSec: number;
   zombies: zombies;
   virus: virus;
   study: study;
@@ -36,34 +38,79 @@ export class Game {
       level: 1,
       progression: 0
     }
+
+    const timeline = setInterval(() => {
+      const brainsPerSec = this.updateBrainsPerSec();
+      this.brains += brainsPerSec;
+      this.hud.brainsPerSec.innerHTML = `${brainsPerSec.toFixed(2)} Per Sec`;
+      this.hud.brains.innerHTML = `${this.brains.toFixed(2)}`;
+    }, 1000);
   }
 
   addEventsListener(elements: hud) {
     elements.bigBigBrain.addEventListener('click', () => {
-      this.addBrain();
+      this.addBrain(this.player.power);
     });
     elements.zombieCase.addEventListener('click', () => {
       this.buyZombie();
     });
+    elements.virusResearch.addEventListener('click', () => {
+      this.updateResearch(this.player.intelligence);
+    });
   }
 
-  addBrain() {
-    this.brains += this.player.power;
-    this.hud.brains.innerHTML = `${this.brains}`;
+  addBrain(power: number) {
+    this.brains += power;
+    this.hud.brains.innerHTML = `${this.brains.toFixed(2)}`;
     this.hud.bigBigBrain.style.transform = 'scale(1.2)';
     setTimeout(() => {
       this.hud.bigBigBrain.style.transform = 'scale(1.0)';
     }, 100);
   }
 
+  updateBrainsPerSec() {
+    const virusEfficiency = this.virus.level / 10;
+    return this.brainsPerSec = virusEfficiency * this.zombies.quantity; 
+  }
+
   buyZombie() {
     if (this.brains - this.zombies.price >= 0) {
       this.brains -= this.zombies.price;
       this.zombies.quantity++;
+      this.hud.brainsPerSec.innerHTML = `${this.updateBrainsPerSec().toFixed(2)} Per Sec`;
       this.zombies.price *= 1.5;
-      this.hud.zombiePrice.innerHTML = `Cost: ${this.zombies.price} Brains`;
-      this.hud.brains.innerHTML = `${this.brains}`;
+      this.hud.zombiePrice.innerHTML = `Cost: ${this.zombies.price.toFixed(2)} Brains`;
+      this.hud.brains.innerHTML = `${this.brains.toFixed(2)}`;
       this.hud.nbZombies.innerHTML = `${this.zombies.quantity}`;
     }
   }
+  
+  updateResearch(intelligence: number) {
+    if (this.brains - intelligence >= 0) {
+      this.brains -= intelligence;
+      this.hud.brains.innerHTML = `${this.brains.toFixed(2)}`;
+      this.virus.progression += intelligence;
+      if (this.virus.progression >= this.virus.level * 100) {
+        this.virus.progression = 0;
+        this.virus.level++;
+        this.hud.virusLevel.innerHTML = `${this.virus.level}`;
+      }
+      const newGaugeWidth = Math.round((this.virus.progression * 100) / (this.virus.level * 100));
+      this.hud.virusGauge.style.width = `${newGaugeWidth}%`;
+      if (newGaugeWidth >= 0 && newGaugeWidth <= 33) {
+        this.hud.virusIcon.classList.add('green');
+        this.hud.virusIcon.classList.remove('orange');
+        this.hud.virusIcon.classList.remove('red');
+      } else if (newGaugeWidth >= 34 && newGaugeWidth <= 66) {
+        this.hud.virusIcon.classList.add('orange');
+        this.hud.virusIcon.classList.remove('green');
+        this.hud.virusIcon.classList.remove('red');
+      } else if (newGaugeWidth >= 67 && newGaugeWidth <= 100) {
+        this.hud.virusIcon.classList.add('red');
+        this.hud.virusIcon.classList.remove('orange');
+        this.hud.virusIcon.classList.remove('green');
+      }
+    }
+  }
+
 }
