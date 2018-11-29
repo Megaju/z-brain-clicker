@@ -27,12 +27,13 @@ export class Game {
       price: 25
     }
     this.virus = {
-      level: 1,
+      level: 60,
       progression: 0
     }
     this.study = {
       level: 1,
-      progression: 0
+      progression: 0,
+      nextLevel: 600
     }
     this.training = {
       level: 1,
@@ -46,10 +47,13 @@ export class Game {
     this.hud.virusLevel.innerHTML = `${this.virus.level}`;
 
     const timeline = setInterval(() => {
+      // Brains per sec
       const brainsPerSec = this.updateBrainsPerSec();
       this.brains += brainsPerSec;
       this.hud.brainsPerSec.innerHTML = `${brainsPerSec.toFixed(2)} Per Sec`;
       this.hud.brains.innerHTML = `${this.brains.toFixed(2)}`;
+      // Study
+      this.updateStudy();
     }, 1000);
   }
 
@@ -117,6 +121,20 @@ export class Game {
         this.hud.virusIcon.classList.remove('green');
       }
     }
+  }
+
+  updateStudy() {
+    this.study.progression++;
+    console.log(this.study.progression);
+    if (this.study.progression >= this.study.nextLevel) {
+      this.player.intelligence++;
+      this.study.level++;
+      this.study.progression = 0;
+      this.study.nextLevel *= 1.5;
+    }
+    const newGaugeWidth = Math.round((this.study.progression * 100) / (this.study.nextLevel));
+    console.log(newGaugeWidth);
+    this.hud.studyGauge.style.width = `${newGaugeWidth}%`;
   }
 
 }

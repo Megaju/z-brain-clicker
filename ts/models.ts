@@ -16,6 +16,7 @@ export interface virus {
 export interface study {
   level: number;
   progression: number;
+  nextLevel: number;
 }
 
 export interface training {
@@ -34,4 +35,8 @@ export interface hud {
   virusGauge: HTMLElement;
   virusIcon: HTMLElement;
   virusLevel: HTMLElement;
+  studyResearch: HTMLElement;
+  studyGauge: HTMLElement;
+  studyIcon: HTMLElement;
+  studyLevel: HTMLElement;
 }

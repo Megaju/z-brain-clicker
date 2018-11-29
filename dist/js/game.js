@@ -17,12 +17,13 @@ var Game = /** @class */ (function () {
             price: 25
         };
         this.virus = {
-            level: 1,
+            level: 60,
             progression: 0
         };
         this.study = {
             level: 1,
-            progression: 0
+            progression: 0,
+            nextLevel: 600
         };
         this.training = {
             level: 1,
@@ -34,10 +35,13 @@ var Game = /** @class */ (function () {
         this.hud.zombiePrice.innerHTML = "Cost: " + this.zombies.price.toFixed(2) + " Brains";
         this.hud.virusLevel.innerHTML = "" + this.virus.level;
         var timeline = setInterval(function () {
+            // Brains per sec
             var brainsPerSec = _this.updateBrainsPerSec();
             _this.brains += brainsPerSec;
             _this.hud.brainsPerSec.innerHTML = brainsPerSec.toFixed(2) + " Per Sec";
             _this.hud.brains.innerHTML = "" + _this.brains.toFixed(2);
+            // Study
+            _this.updateStudy();
         }, 1000);
     };
     Game.prototype.addEventsListener = function (elements) {
@@ -104,6 +108,19 @@ var Game = /** @class */ (function () {
                 this.hud.virusIcon.classList.remove('green');
             }
         }
+    };
+    Game.prototype.updateStudy = function () {
+        this.study.progression++;
+        console.log(this.study.progression);
+        if (this.study.progression >= this.study.nextLevel) {
+            this.player.intelligence++;
+            this.study.level++;
+            this.study.progression = 0;
+            this.study.nextLevel *= 1.5;
+        }
+        var newGaugeWidth = Math.round((this.study.progression * 100) / (this.study.nextLevel));
+        console.log(newGaugeWidth);
+        this.hud.studyGauge.style.width = newGaugeWidth + "%";
     };
     return Game;
 }());
