@@ -39,4 +39,8 @@ export interface hud {
   studyGauge: HTMLElement;
   studyIcon: HTMLElement;
   studyLevel: HTMLElement;
+  trainingResearch: HTMLElement;
+  trainingGauge: HTMLElement;
+  trainingIcon: HTMLElement;
+  trainingLevel: HTMLElement;
 }

@@ -18,7 +18,7 @@ var Game = /** @class */ (function () {
             price: 25
         };
         this.virus = {
-            level: 60,
+            level: 1,
             progression: 0
         };
         this.study = {
@@ -35,6 +35,7 @@ var Game = /** @class */ (function () {
         this.hud.nbZombies.innerHTML = "" + this.zombies.quantity;
         this.hud.zombiePrice.innerHTML = "Cost: " + this.zombies.price.toFixed(2) + " Brains";
         this.hud.virusLevel.innerHTML = "" + this.virus.level;
+        this.hud.studyLevel.innerHTML = "" + this.study.level;
         var timeline = setInterval(function () {
             // Brains per sec
             var brainsPerSec = _this.updateBrainsPerSec();
@@ -55,6 +56,9 @@ var Game = /** @class */ (function () {
         });
         elements.virusResearch.addEventListener('click', function () {
             _this.updateResearch(_this.player.intelligence);
+        });
+        elements.trainingResearch.addEventListener('click', function () {
+            _this.updateTraining();
         });
     };
     Game.prototype.addBrain = function (power) {
@@ -112,7 +116,6 @@ var Game = /** @class */ (function () {
     };
     Game.prototype.updateStudy = function () {
         this.study.progression++;
-        console.log(this.study.progression);
         if (this.study.progression >= this.study.nextLevel) {
             this.player.intelligence++;
             this.study.level++;
@@ -120,8 +123,18 @@ var Game = /** @class */ (function () {
             this.study.nextLevel *= 1.5;
         }
         var newGaugeWidth = Math.round((this.study.progression * 100) / (this.study.nextLevel));
-        console.log(newGaugeWidth);
         this.hud.studyGauge.style.width = newGaugeWidth + "%";
+    };
+    Game.prototype.updateTraining = function () {
+        this.training.progression++;
+        if (this.training.progression >= this.training.level * 100) {
+            this.training.progression = 0;
+            this.training.level++;
+            this.hud.trainingLevel.innerHTML = "" + this.training.level;
+            this.player.power++;
+        }
+        var newGaugeWidth = Math.round((this.training.progression * 100) / (this.training.level * 100));
+        this.hud.trainingGauge.style.width = newGaugeWidth + "%";
     };
     return Game;
 }());
@@ -145,7 +158,11 @@ var hud = {
     studyResearch: getEl('study-upgrade'),
     studyGauge: getEl('study-gauge'),
     studyIcon: getEl('study-icon'),
-    studyLevel: getEl('study-level')
+    studyLevel: getEl('study-level'),
+    trainingResearch: getEl('training-upgrade'),
+    trainingGauge: getEl('training-gauge'),
+    trainingIcon: getEl('training-icon'),
+    trainingLevel: getEl('training-level')
 };
 var GAME = new game_1.Game(hud);
 GAME.initGame();

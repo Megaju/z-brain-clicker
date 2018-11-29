@@ -27,7 +27,7 @@ export class Game {
       price: 25
     }
     this.virus = {
-      level: 60,
+      level: 1,
       progression: 0
     }
     this.study = {
@@ -45,6 +45,7 @@ export class Game {
     this.hud.nbZombies.innerHTML = `${this.zombies.quantity}`;
     this.hud.zombiePrice.innerHTML = `Cost: ${this.zombies.price.toFixed(2)} Brains`;
     this.hud.virusLevel.innerHTML = `${this.virus.level}`;
+    this.hud.studyLevel.innerHTML = `${this.study.level}`;
 
     const timeline = setInterval(() => {
       // Brains per sec
@@ -66,6 +67,9 @@ export class Game {
     });
     elements.virusResearch.addEventListener('click', () => {
       this.updateResearch(this.player.intelligence);
+    });
+    elements.trainingResearch.addEventListener('click', () => {
+      this.updateTraining();
     });
   }
 
@@ -125,7 +129,6 @@ export class Game {
 
   updateStudy() {
     this.study.progression++;
-    console.log(this.study.progression);
     if (this.study.progression >= this.study.nextLevel) {
       this.player.intelligence++;
       this.study.level++;
@@ -133,8 +136,19 @@ export class Game {
       this.study.nextLevel *= 1.5;
     }
     const newGaugeWidth = Math.round((this.study.progression * 100) / (this.study.nextLevel));
-    console.log(newGaugeWidth);
     this.hud.studyGauge.style.width = `${newGaugeWidth}%`;
+  }
+
+  updateTraining() {
+    this.training.progression++;
+    if (this.training.progression >= this.training.level * 100) {
+      this.training.progression = 0;
+      this.training.level++;
+      this.hud.trainingLevel.innerHTML = `${this.training.level}`;
+      this.player.power++;
+    }
+    const newGaugeWidth = Math.round((this.training.progression * 100) / (this.training.level * 100));
+    this.hud.trainingGauge.style.width = `${newGaugeWidth}%`;
   }
 
 }

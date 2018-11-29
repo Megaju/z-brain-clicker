@@ -1,25 +1,22 @@
 Z-BRAIN CLICKER
 ===============
 
-## Principe de base
+Click on the big brain to have more brains.
+Attract zombies with the brains. Zombies bring brains alone!
 
-C'est un clicker game. Le but est de récolter le plus de cerveau possible en cliquant sur le gros cerveau. De temps en temps des petites cerveaux apparaissent
-à l'écran, il faut cliquer dessus, il donnent un nombre random de cerveau.
+> O.1 per second
 
-FORMULE RANDOM BRAIN : NbBrain / sec * 7 < > NbBrain / sec * 13
-
-Avec les brains, ont peut enroler des zombies. Les zombies apportent plus de brain à la seconde.
-
-FORMULE UP ZOMBIE PRICE : Price + NbZombie * 0.25
-
-Chaque zombie apporte +1 brain à la seconde.
-
-> Bref petit projet du WE, on verra bien ce que ça donnera.
+Study the Z-Virus to improve zombies. Your intelligence increases over time as long as you leave the game open.
+Practice in the barn to gain strength and gain more brain by click!
 
 ## Launch dev env
-> npm eatbrain
+> npm start
 
 ## Copyright/Attribution Notice:
 
 Zombies :
-> "[LPC] Zombie" by Benjamin K. Smith, commissioned by castelonia. Based on the male LPC base by Stephen Challener (Redshrike) and the thrust and shoot animations by Johannes Sjölund (wulax).
+* "[LPC] Zombie" by Benjamin K. Smith, commissioned by castelonia. Based on the male LPC base by Stephen Challener (Redshrike) and the thrust and shoot animations by Johannes Sjölund (wulax).
+Icons :
+* [Osmic](https://opengameart.org/users/osmic)
+UI Box :
+* [StumpyStrust](https://opengameart.org/users/stumpystrust)

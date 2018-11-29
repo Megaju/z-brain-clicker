@@ -15,7 +15,11 @@ var hud = {
     studyResearch: getEl('study-upgrade'),
     studyGauge: getEl('study-gauge'),
     studyIcon: getEl('study-icon'),
-    studyLevel: getEl('study-level')
+    studyLevel: getEl('study-level'),
+    trainingResearch: getEl('training-upgrade'),
+    trainingGauge: getEl('training-gauge'),
+    trainingIcon: getEl('training-icon'),
+    trainingLevel: getEl('training-level')
 };
 var GAME = new game_1.Game(hud);
 GAME.initGame();

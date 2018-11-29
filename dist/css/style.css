@@ -152,6 +152,12 @@ ul.research-market li .icon.orange {
 ul.research-market li .icon.red {
   background-image: url(../images/virus-red.png);
 }
+ul.research-market li .icon.barn {
+  background-image: url(../images/barn.png);
+}
+ul.research-market li .icon.eye {
+  background-image: url(../images/eye.png);
+}
 
 body {
   display: flex;
